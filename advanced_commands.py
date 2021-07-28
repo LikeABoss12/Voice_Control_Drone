@@ -1,4 +1,4 @@
-from functions_simple_commands import *
+from functions_for_commands import *
 my_drone = tello.Tello()
 mic = sr.Microphone()
 recognizer = sr.Recognizer()
