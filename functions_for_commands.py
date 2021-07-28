@@ -23,33 +23,27 @@ def execute_command(result_one):
     # Takeoff
     if result_one == 'takeoff':
         my_drone.takeoff()
-        if my_drone.takeoff():
-            return True
+        return True
 
     # Land
     elif result_one == 'land':
         my_drone.land()
-        if my_drone.land():
-            return True
+        return True
 
     # Flip
-    elif 'flip' in result_one:
+    if 'flip' in result_one:
         if 'forward' in result_one:
             my_drone.flip_forward()
-            if my_drone.flip_forward():
-                return True
+            return True
         elif 'back' in result_one:
             my_drone.flip_back()
-            if my_drone.flip_back():
-                return True
+            return True
         elif 'right' in result_one:
             my_drone.flip_right()
-            if my_drone.flip_right():
-                return True
+            return True
         elif 'left' in result_one:
             my_drone.flip_left()
-            if my_drone.flip_left():
-                return True
+            return True
 
     # Move
     elif 'move' in result_one:
@@ -60,13 +54,11 @@ def execute_command(result_one):
                     y = y + element
             if y != '':
                 my_drone.move_forward(int(y))
-                if my_drone.move_forward(int(y)):
-                    return True
+                del y
+                return True
             else:
                 my_drone.move_forward(100)
-                if my_drone.move_forward(100):
-                    return True
-            del y
+                return True
 
         elif 'back' in result_one:
             y = ''
@@ -75,13 +67,11 @@ def execute_command(result_one):
                     y = y + element
             if y != '':
                 my_drone.move_back(int(y))
-                if my_drone.move_back(int(y)):
-                    return True
+                del y
+                return True
             else:
                 my_drone.move_back(100)
-                if my_drone.move_back(100):
-                    return True
-            del y
+                return True
 
         elif 'left' in result_one:
             y = ''
@@ -90,13 +80,11 @@ def execute_command(result_one):
                     y = y + element
             if y != '':
                 my_drone.move_left(int(y))
-                if my_drone.move_left(int(y)):
-                    return True
+                del y
+                return True
             else:
                 my_drone.move_left(100)
-                if my_drone.move_left(100):
-                    return True
-            del y
+                return True
 
         elif 'right' in result_one:
             y = ''
@@ -105,13 +93,11 @@ def execute_command(result_one):
                     y = y + element
             if y != '':
                 my_drone.move_right(int(y))
-                if my_drone.move_right(int(y)):
-                    return True
+                del y
+                return True
             else:
                 my_drone.move_right(100)
-                if my_drone.move_right(100):
-                    return True
-            del y
+                return True
 
         elif 'up' in result_one:
             y = ''
@@ -120,13 +106,11 @@ def execute_command(result_one):
                     y = y + element
             if y != '':
                 my_drone.move_up(int(y))
-                if my_drone.move_up(int(y)):
-                    return True
+                del y
+                return True
             else:
                 my_drone.move_up(100)
-                if my_drone.move_up(100):
-                    return True
-            del y
+                return True
 
         elif 'down' in result_one:
             y = ''
@@ -135,13 +119,11 @@ def execute_command(result_one):
                     y = y + element
             if y != '':
                 my_drone.move_down(int(y))
-                if my_drone.move_down(int(y)):
-                    return True
+                del y
+                return True
             else:
                 my_drone.move_down(100)
-                if my_drone.move_down(100):
-                    return True
-            del y
+                return True
 
     else:
         print('Could not execute command! Please Try Again!')
