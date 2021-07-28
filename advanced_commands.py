@@ -6,6 +6,10 @@ while True:
     result = voice_command()
     statement = execute_command(result)
     print(statement)
-    del result
-    del statement
-    continue
+    if statement is True:
+        del result
+        del statement
+        continue
+    else:
+        print('Loop Failed!')
+        break
