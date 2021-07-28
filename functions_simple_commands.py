@@ -5,6 +5,7 @@ my_drone.connect()
 my_mic = sr.Microphone()
 r = sr.Recognizer()
 
+
 def voice_command():  # This function allows repeated voice commands
     with my_mic as source:
         print("Command: ")
@@ -16,6 +17,7 @@ def voice_command():  # This function allows repeated voice commands
             return text
         except Exception as e:
             print(f"Exception: {e}")
+
 
 def execute_command(result_one):
     if result_one == 'takeoff':
