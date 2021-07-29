@@ -8,7 +8,7 @@ r = sr.Recognizer()
 
 def voice_command():  # This function allows repeated voice commands
     with my_mic as source:
-        print("Command: ")
+        print("Say Command Here: ")
         r.adjust_for_ambient_noise(source, duration=0.5)
         audio = r.listen(source)
         try:
@@ -31,7 +31,7 @@ def execute_command(result_one):
         return True
 
     # Flip
-    if 'flip' in result_one:
+    elif 'flip' in result_one:
         if 'forward' in result_one:
             my_drone.flip_forward()
             return True
@@ -126,4 +126,4 @@ def execute_command(result_one):
                 return True
 
     else:
-        print('Could not execute command! Please Try Again!')
+        return False
