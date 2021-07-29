@@ -1,6 +1,11 @@
 # Setup
-from functions_for_commands import *
+from functions_simple_commands import *
+my_drone = tello.Tello()
+my_drone.connect()
 print(my_drone.get_battery())
+my_mic = sr.Microphone()
+r = sr.Recognizer()
+my_drone.takeoff()
 print(sr.__version__)
 
 # Comparison Code
