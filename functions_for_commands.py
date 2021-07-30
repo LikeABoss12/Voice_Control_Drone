@@ -45,6 +45,31 @@ def execute_command(result_one):
             my_drone.flip_left()
             return True
 
+    # Turn
+    elif 'turn' in result_one:
+        if 'clock' in result_one:
+            deg = ''
+            for element in result_one:
+                if element.isdigit() is True:
+                    deg = deg + element
+            if deg != '':
+                my_drone.rotate_clockwise(int(deg))
+                del deg
+            else:
+                my_drone.rotate_clockwise(90)
+        elif 'counter' in result_one:
+            deg = ''
+            for element in result_one:
+                if element.isdigit() is True:
+                    deg = deg + element
+            if deg != '':
+                my_drone.rotate_counter_clockwise(int(deg))
+                del deg
+                return True
+            else:
+                my_drone.rotate_counter_clockwise(90)
+                return True
+
     # Move
     elif 'move' in result_one:
         if 'forward' in result_one:
