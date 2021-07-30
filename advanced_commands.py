@@ -8,15 +8,15 @@ while True:
     statement = execute_command(result)
     print(statement)
 
-    if statement is True:
-        del result
-        del statement
-        continue
-
     if int(my_drone.get_battery()) < 20:
         print('Low Battery!')
         my_drone.land()
         my_drone.end()
+
+    if statement is True:
+        del result
+        del statement
+        continue
 
     else:
         continue

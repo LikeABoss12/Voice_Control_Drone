@@ -8,9 +8,9 @@ r = sr.Recognizer()
 
 def voice_command():  # This function allows repeated voice commands
     with my_mic as source:
-        print("Say Command Here: ")
+        print("Say Command Now: ")
         r.adjust_for_ambient_noise(source, duration=0.5)
-        audio = r.listen(source)
+        audio = r.listen(source, phrase_time_limit=5)
         try:
             text = r.recognize_google(audio)
             print(text)  # Informational purposes
