@@ -1,5 +1,5 @@
 # Setup
-from functions_simple_commands import *
+from functions_for_commands import *
 my_drone = tello.Tello()
 my_drone.connect()
 print(my_drone.get_battery())
